@@ -1,0 +1,913 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
+  
+
+  :root {
+    --color-light: rgba(132, 139, 200, 0.18);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto;
+  }
+
+  .header {
+    height: 65px;
+    width: 79.8rem;
+    background: #a00c0c;
+    position: fixed;
+    margin-bottom: 0;
+  }
+
+  .header .top img {
+    display: inline;
+    height: 50px;
+    width: 200px;
+    margin: 8px 0 10px 20px;
+    background-color: transparent;
+  }
+
+  .header .top .search span {
+    position: absolute;
+    object-fit: cover;
+    top: 20px;
+    left: 36.5rem;
+    z-index: 1;
+  }
+
+  .header .top .search input {
+    width: 350px;
+    height: 30px;
+    top: 16px;
+    left: 36rem;
+    padding: 10px;
+    padding-left: 35px;
+    font-size: 14px;
+    border-style: none;
+    border-radius: 40px;
+    position: absolute;
+  }
+
+  .header .top .right .vertical {
+    width: 1px;
+    height: 65px;
+    margin: 0 0 0 60rem; 
+    top: 0;
+    background: white;
+    position: absolute;
+}
+
+.header .top .right h3 {
+    font-size: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    color: white;
+    right: 75px;
+    top: 8px;
+    line-height: 25px;
+    position: absolute;
+}
+
+.header .right .select {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: white;
+}
+
+.sidebar {
+  height: 90vh;
+  width: 14.3rem;
+  background: white;
+  margin-top: 80px;
+}
+
+.sidebar a:nth-child(1) {
+  display: flex;
+  margin-left: 2rem;
+  gap: 1rem;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+  height: 3rem;
+  transition: all 300ms ease;
+  color: black;
+  background: rgb(183, 177, 177);
+  border-radius: 10px;
+}
+
+
+.sidebar a {
+  display: flex;
+  margin-left: 2rem;
+  gap: 1rem;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+  height: 3rem;
+  transition: all 300ms ease;
+  color: black;
+  border-radius: 10px;
+}
+
+.sidebar a.active span {
+  margin-left: calc(1rem - 3px);
+}
+
+
+.sidebar a:hover {
+  transform: translateX(20px);
+  transition: transform 0.3s ease;
+  background: rgb(183, 177, 177);
+  color: black;
+}
+
+.sidebar .top hr {
+  margin: 60px 12px 10px 12px;
+}
+
+.sidebar a h3{
+  font-size: 15px;
+  padding-right: 10px;
+  font-weight: 600;
+  transition: all 300ms ease;
+}
+.sidebar .top h3 .message-count {
+  background: #1876f0;
+    color: white;
+    margin-left: 40px;
+    padding: 2px 7px;
+    font-size: 11px;
+    border-radius: 4px;
+}
+
+.main {
+  height: 90vh;
+  width: 65.5rem;
+  float: right;
+  position: absolute;
+  margin: 4.1rem 0 0 14.3rem;
+}
+
+
+#btnaddemployee {
+  height: 38px;
+  width: 150px;
+  cursor: pointer;
+  margin: 30px 10px 0.5rem 51rem;
+  color: white;
+  border-radius: 5px;
+  background: #1876f0;
+  border-style: none;
+  font-size: 13px;
+  transition: all ease-in-out 0.2s;
+}
+
+#btnaddemployee:hover {
+  background: #1755a6;
+}
+
+.main .bottom h3 {
+  margin: 5px 0 10px 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.main .bottom hr {
+  margin: 10px 20px 10px 30px;
+  width: 58.4rem;
+}
+
+.main .bottom a {
+  margin: 0 10px 10px 30px;
+  font-size: 14px;
+}
+
+.main .bottom a.active {
+  margin: 0 10px 10px 30px;
+  width: 55rem;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: 2px solid blue;
+}
+
+#selectall {
+  color: #15ac7e;
+}
+
+#clearall {
+  color: #15ac7e;
+}
+
+#archived {
+  text-decoration: none;
+  
+}
+
+#selected {
+  text-decoration: none;
+}
+
+.main .bottom .table table {
+  border-collapse: collapse;
+  margin-left: 2rem;
+  margin-top: 10px;
+  width: 89%;
+  height: 11.5rem;
+  box-shadow: var(--box-shadow);
+  background: #FFFFFF;
+  text-align: center;
+  transition: all 300ms ease;
+  font-size: 15px;
+}
+
+.main .bottom .table table:hover {
+  box-shadow: none;
+}
+
+.main .bottom .table table th {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 5px;
+  background: #d6e7fe;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.main .bottom .table table tbody td {
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-light);
+  color: black;
+}
+
+.main .bottom .table table tbody td .edit {
+  background: #089853;
+  color: white;
+  border-style: none;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 2px;
+  width: 50px;
+  margin: 0 10px 0 12px;
+}
+
+.main .bottom .table table tbody td .edit:hover {
+  background: #0c7844;
+}
+
+.main .bottom .table table tbody td .archive {
+  background: #982A08;
+  color: white;
+  border-style: none;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 30px;
+  font-size: 14px;
+  padding: 2px;
+  width: 70px;
+  margin-left: 10px;
+}
+
+.main .bottom .table table tbody td .archive:hover {
+  background: #6f230c;
+}
+
+#btninfo {
+  cursor: pointer;
+}
+
+/*======================= Popup form style ====================*/
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+}
+
+.nav li a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: blue;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+/*======================= Popup Personal ====================*/
+
+.left {
+  height: 500px;
+  width: 900px;
+  background: white;
+}
+
+.left h2 {
+  font-size: 15px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.left .top .input-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+.left .top .line-input {
+  margin: 10px 0 5px 8rem;
+  width: 13rem;
+  padding-left: 5px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box; 
+}
+
+.left .top .line-input:focus {
+  border-color: black;
+}
+
+.left .top .input-label {
+  text-transform: uppercase;
+  position: absolute;
+  margin: 10px 0 0 3rem;
+  pointer-events: none;
+  transition: top 0.3s, font-size 0.3s;
+}
+
+.left .top .input-wrapper .status {
+  margin: 0 2px 0 14rem;
+  font-size: 15px;
+}
+
+#empstatus {
+width: 9rem;
+height: 30px;
+  border-radius: 3px;
+}
+
+.left .middle h3 {
+  margin: 2px 0 0 1.5rem;
+}
+.left .middle .name {
+  margin: 5px 0 0 3rem;
+  display: inline-block;
+}
+
+.left .middle .name label {
+  margin: 0 5px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+
+}
+
+.left .middle .name input {
+  margin: 20px 10px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 15rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+.left .middle .name input:nth-of-type(3) {
+  width: 8rem;
+}
+
+.left .middle .birthdate {
+  margin: 0 0 0 3rem;
+  display: inline-block;
+}
+
+.left .middle .birthdate label {
+  margin: 0 5px 0 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+.left .middle .birthdate input {
+  margin: 20px 5px 0 0;
+  height: 25px;
+  width: 15rem;
+  border-radius: 4px;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.left .middle .addinfo {
+  margin: 0 0 0 3rem;
+  display: inline-block;
+}
+
+.left .middle .addinfo label {
+  margin: 0 5px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+.left .middle .addinfo select {
+  margin: 20px 8px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 14rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+.left .middle .contacts {
+  margin: 3px 0 0 3rem;
+  display: inline-block;
+}
+
+.left .middle .contacts label {
+  margin: 0 5px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+.left .middle .contacts input {
+  margin: 20px 10px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 10rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+.left .middle .addcontactinfo {
+  margin: 5px 0 0 3rem;
+  display: inline-block;
+}
+
+.left .middle .addcontactinfo label {
+  margin: 0 50px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+.left .middle .addcontactinfo select {
+  margin: 18px 20px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 10rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+#zip {
+  margin: 0 50px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+#forzip {
+  border-radius: 4px;
+  margin: 20px 20px 0 0;
+  height: 25px;
+  width: 8rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+#street {
+  margin: 0 50px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+#forstreet {
+  border-radius: 4px;
+  margin: 20px 10px 0 0;
+  height: 25px;
+  width: 10rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.left .bottom .health {
+  margin: 5px 0 0 3rem;
+  display: inline-block;
+}
+
+.left .bottom .health label {
+  margin: 0 5px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+
+}
+
+.left .middle .health input {
+  margin: 20px 10px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 14rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+.left .bottom .motherinfo {
+  margin: 5px 0 0 3rem;
+  display: inline-block;
+}
+
+.left .bottom .motherinfo label {
+  margin: 0 5px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+
+}
+
+.left .middle .motherinfo input {
+  margin: 20px 10px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 14rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+.left .bottom .fatherinfo {
+  margin: 5px 0 0 3rem;
+  display: inline-block;
+}
+
+.left .bottom .fatherinfo label {
+  margin: 0 5px 5px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: absolute;
+
+}
+
+.left .middle .fatherinfo input {
+  margin: 20px 10px 0 0;
+  border-radius: 4px;
+  height: 25px;
+  width: 14rem;
+  padding-left: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  float: inline-start;
+  position: relative;
+}
+
+/*======================= Popup Professional ====================*/
+
+.left {
+  height: 500px;
+  width: 900px;
+  background: white;
+}
+
+.left h2 {
+  font-size: 15px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.left .top h3 {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+
+.left .top .table table {
+  border-collapse: collapse;
+  margin: 10px 0 4rem 2rem;
+  text-transform: uppercase;
+  width: 89%;
+  height: 2rem;
+  box-shadow: var(--box-shadow);
+  background: #FFFFFF;
+  text-align: center;
+  transition: all 300ms ease;
+  font-size: 15px;
+}
+
+.left .top .table table:hover {
+  box-shadow: none;
+}
+
+.left .top .table table th {
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  background: rgb(230, 228, 228);
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.left .top .table table tbody td {
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-light);
+  color: black;
+}
+
+.left .middle h3 {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+
+.left .middle .table table {
+  border-collapse: collapse;
+  margin: 10px 0 3rem 2rem;
+  text-transform: uppercase;
+  width: 89%;
+  height: 4rem;
+  box-shadow: var(--box-shadow);
+  background: #FFFFFF;
+  text-align: center;
+  transition: all 300ms ease;
+  font-size: 15px;
+}
+
+.left .middle .table table:hover {
+  box-shadow: none;
+}
+
+.left .middle .table table th {
+  padding-left: 30px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  background: rgb(230, 228, 228);
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.left .middle .table table tbody td {
+  padding-left: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 2px solid var(--color-light);
+  color: black;
+}
+
+
+.left .bottom h3 {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+
+.left .bottom .table table {
+  border-collapse: collapse;
+  margin: 10px 0 3rem 2rem;
+  text-transform: uppercase;
+  width: 89%;
+  height: 4rem;
+  box-shadow: var(--box-shadow);
+  background: #FFFFFF;
+  text-align: center;
+  transition: all 300ms ease;
+  font-size: 15px;
+}
+
+.left .bottom .table table:hover {
+  box-shadow: none;
+}
+
+.left .bottom .table table th {
+  text-align: left;
+  padding-left: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  background: rgb(230, 228, 228);
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.left .bottom .table table tbody td {
+  padding-left: 50px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-light);
+  color: black;
+
+}
+
+
+/*================== Popup Job Experience ===============*/
+
+
+.left {
+  height: 500px;
+  width: 900px;
+  background: white;
+}
+
+.left h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.left .top h3 {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+
+.left .top .table table {
+  border-collapse: collapse;
+  margin: 10px 0 3rem 2rem;
+  text-transform: uppercase;
+  width: 89%;
+  height: 4rem;
+  box-shadow: var(--box-shadow);
+  background: #FFFFFF;
+  text-align: center;
+  transition: all 300ms ease;
+  font-size: 15px;
+}
+
+.left .top .table table:hover {
+  box-shadow: none;
+}
+
+.left .top .table table th {
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  background: rgb(230, 228, 228);
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.left .top .table table tbody td {
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-light);
+  color: black;
+}
+
+.left .bottom h3 {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+
+.left .bottom .table table {
+  border-collapse: collapse;
+  margin: 10px 0 3rem 2rem;
+  text-transform: uppercase;
+  width: 89%;
+  height: 4rem;
+  box-shadow: var(--box-shadow);
+  background: #FFFFFF;
+  text-align: center;
+  transition: all 300ms ease;
+  font-size: 15px;
+}
+
+.left .bottom .table table:hover {
+  box-shadow: none;
+}
+
+.left .bottom .table table th {
+  text-align: left;
+  padding-left: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  background: rgb(230, 228, 228);
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.left .bottom .table table tbody td {
+  padding-left: 50px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-light);
+  color: black;
+}
+
+#btnclose {
+  border: 2px solid #4b71fa;
+  cursor: pointer;
+  background: white;
+  height: 40px;
+  width: 6rem;
+  margin: 2px 0 10px 400px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#btnclose:hover {
+  background: #315cfd;
+  color: white;
+}
+
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
